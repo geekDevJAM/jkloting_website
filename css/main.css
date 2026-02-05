@@ -58,7 +58,7 @@ p {
 
 a:hover,
 a:focus {
-  color: #61d2b4;
+  color: #333;
 }
 
 a {
@@ -100,7 +100,7 @@ a:not([href]):not([tabindex]) {
 
 a:not([href]):not([tabindex]):focus,
 a:not([href]):not([tabindex]):hover {
-  color: #61d2b4;
+  color: #666;
 }
 
 /* ==========================================================================
@@ -126,12 +126,12 @@ a:not([href]):not([tabindex]):hover {
 }
 
 .section-header .section-title span {
-  color: #61d2b4;
+  color: #333;
 }
 
 .section-header .section-subtitle {
   margin-top: 15px;
-  color: #333;
+  color: #666;
   font-size: 14px;
   font-weight: 400;
 }
@@ -140,7 +140,7 @@ a:not([href]):not([tabindex]):hover {
   margin: auto;
   width: 70px;
   position: relative;
-  border-top: 2px solid #61d2b4;
+  border-top: 2px solid #333;
   margin-top: 15px;
 }
 
@@ -169,8 +169,8 @@ a:not([href]):not([tabindex]):hover {
 }
 
 .btn-common {
-  border: 1px solid #61d2b4;
-  background: #61d2b4;
+  border: 1px solid #333;
+  background: #333;
   position: relative;
   color: #fff;
   z-index: 1;
@@ -179,11 +179,13 @@ a:not([href]):not([tabindex]):hover {
 
 .btn-common:hover {
   color: #fff;
-  background: #33b391;
-  border-color: #33b391;
+  background: #000;
+  border-color: #000;
   transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   -webkit-transition: all 0.5s ease-in-out;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .btn-border {
@@ -195,8 +197,8 @@ a:not([href]):not([tabindex]):hover {
 
 .btn-border:hover {
   border: 2px solid #fff;
-  color: #fff;
-  background-color: #61d2b4;
+  color: #000;
+  background-color: #fff;
 }
 
 .btn-lg {
@@ -255,6 +257,7 @@ button:focus {
 
 .social-icons ul li a:hover {
   color: #fff;
+  background: #333;
 }
 
 .facebook a {
@@ -347,7 +350,7 @@ button:focus {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  background-color: #61d2b4;
+  background-color: #fff;
   opacity: 0.6;
   position: absolute;
   top: 0;
@@ -402,11 +405,15 @@ button:focus {
   font-size: 14px;
   text-align: center;
   border-radius: 4px;
-  background-color: #61d2b4;
+  background-color: #333;
   -webkit-transition: all 0.2s linear;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
   transition: all 0.2s linear;
+}
+
+.back-to-top i:hover {
+  background-color: #000;
 }
 
 /* ==========================================================================
@@ -426,7 +433,11 @@ button:focus {
   height: 100%;
   top: 0px;
   left: 0px;
-  background: #61d2b4;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.7),
+    rgba(51, 51, 51, 0.8)
+  );
   opacity: 0.9;
 }
 
@@ -468,7 +479,7 @@ button:focus {
 }
 
 #hero-area .banner_bottom_btn i:hover {
-  color: #61d2b4;
+  color: #ccc;
 }
 
 /* ==========================================================================
@@ -479,19 +490,60 @@ button:focus {
   padding: 0px;
 }
 
+/* Logo sizing - responsive */
+.navbar-brand img {
+  width: 150px;
+  height: auto;
+  max-width: 100%;
+}
+
+/* Tablet logo size */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-brand img {
+    width: 120px;
+  }
+}
+
+/* Mobile logo size */
+@media (max-width: 767px) {
+  .navbar-brand img {
+    width: 100px;
+  }
+
+  .navbar-brand {
+    padding: 10px 15px;
+  }
+}
+
+/* Small mobile logo size */
+@media (max-width: 480px) {
+  .navbar-brand img {
+    width: 80px;
+  }
+}
+
+/* Translucent navbar - neutral colors */
+.indigo {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
 .top-nav-collapse {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   z-index: 999999;
   top: 0px !important;
   padding: 0;
-  box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 3px 6px 3px rgba(0, 0, 0, 0.1);
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
-  background: #fff !important;
 }
 
 .top-nav-collapse .navbar-brand {
@@ -500,20 +552,18 @@ button:focus {
 
 .top-nav-collapse .navbar-nav .nav-link {
   color: #333 !important;
-  margin-top: 0px !important;
-  margin-bottom: 0px !important;
+  margin-top: 20px !important;
+  margin-bottom: 20px !important;
 }
 
 .top-nav-collapse .navbar-nav .nav-link:hover {
-  color: #61d2b4 !important;
+  color: #000 !important;
+  background: #f5f5f5 !important;
 }
 
 .top-nav-collapse .navbar-nav .nav-link.active {
   color: #fff !important;
-}
-
-.indigo {
-  background: transparent;
+  background: #333 !important;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -530,14 +580,19 @@ button:focus {
 }
 
 .navbar-expand-lg .navbar-nav li a:hover,
-.navbar-expand-lg .navbar-nav li .active > a,
 .navbar-expand-lg .navbar-nav li a:focus {
-  color: #61d2b4;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-expand-lg .navbar-nav li .active > a {
+  color: #000 !important;
+  background: #fff;
 }
 
 .navbar .nav-link.active {
-  color: #fff !important;
-  background: #61d2b4;
+  color: #000 !important;
+  background: #fff;
 }
 
 .dropdown-toggle::after {
@@ -545,11 +600,11 @@ button:focus {
 }
 
 .slicknav_btn {
-  border-color: #61d2b4;
+  border-color: #333;
 }
 
 .slicknav_menu .slicknav_icon-bar {
-  background: #61d2b4;
+  background: #333;
 }
 
 /* only small tablets */
@@ -579,28 +634,49 @@ button:focus {
     position: absolute;
     padding: 15px;
     top: 0;
+    z-index: 10;
   }
   .navbar-brand img {
-    width: 20%;
+    width: auto;
+    max-height: 40px;
   }
   #mobile-menu {
     display: none;
   }
   .slicknav_menu {
     display: block;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .slicknav_btn {
+    background: transparent;
+    border-color: #fff;
+  }
+  .slicknav_menu .slicknav_icon-bar {
+    background: #fff;
+  }
+  .slicknav_nav {
+    background: rgba(0, 0, 0, 0.95);
+  }
+  .slicknav_nav a {
+    color: #fff;
   }
   .slicknav_nav .active a {
-    background: #61d2b4;
-    color: #fff;
+    background: #fff;
+    color: #000;
   }
   .slicknav_nav a:hover,
   .slicknav_nav .active {
-    color: #61d2b4;
-    background: #f8f9fa;
+    color: #000;
+    background: #fff;
   }
   .slicknav_nav .dropdown li a.active {
-    background: #f8f9fa;
-    color: #61d2b4;
+    background: #fff;
+    color: #000;
+  }
+  .slicknav_arrow {
+    color: #fff;
   }
 }
 
@@ -632,7 +708,7 @@ button:focus {
 .item-boxes .icon i {
   font-size: 26px;
   line-height: 60px;
-  color: #61d2b4;
+  color: #333;
 }
 
 .item-boxes h4 {
@@ -641,8 +717,13 @@ button:focus {
   margin-bottom: 10px;
 }
 
+.item-boxes:hover {
+  transform: translateY(-5px);
+}
+
 .item-boxes:hover .icon {
-  background: #61d2b4;
+  background: #333;
+  border-color: #333;
 }
 
 .item-boxes:hover .icon i {
@@ -660,12 +741,32 @@ button:focus {
   position: relative;
 }
 
+#features::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 0;
+}
+
+#features .container {
+  position: relative;
+  z-index: 1;
+}
+
 #features .section-title {
   color: #fff;
 }
 
 #features .section-subtitle {
-  color: #fff;
+  color: #ccc;
+}
+
+#features .section-header .lines {
+  border-top: 2px solid #fff;
 }
 
 #features .icon {
@@ -683,7 +784,7 @@ button:focus {
 }
 
 #features .box-item .icon {
-  border: 1px solid #61d2b4;
+  border: 1px solid #fff;
   text-align: center;
   float: left;
   -webkit-transition: all 0.2s linear;
@@ -693,7 +794,7 @@ button:focus {
 }
 
 #features .box-item .icon i {
-  color: #61d2b4;
+  color: #fff;
   font-size: 24px;
   line-height: 60px;
   -webkit-transition: all 0.2s linear;
@@ -707,7 +808,7 @@ button:focus {
 }
 
 #features .box-item .text h4 {
-  color: #61d2b4;
+  color: #fff;
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
@@ -717,14 +818,16 @@ button:focus {
 #features .box-item .text p {
   font-size: 14px;
   line-height: 26px;
+  color: #ccc;
 }
 
 #features .box-item:hover .icon {
-  background: #61d2b4;
+  background: #fff;
+  border-color: #fff;
 }
 
 #features .box-item:hover .icon i {
-  color: #ffffff;
+  color: #000;
 }
 
 #features .show-box img {
@@ -736,7 +839,7 @@ button:focus {
   7. Video promo Style
    ========================================================================== */
 .video-promo {
-  background: #61d2b4;
+  background: #333;
   color: #fff;
   overflow: hidden;
   position: relative;
@@ -771,6 +874,11 @@ button:focus {
   transition: all 0.5s ease-in-out;
 }
 
+.video-promo .video-promo-content .video-popup:hover {
+  background: #fff;
+  color: #333;
+}
+
 .video-promo .video-promo-content .video-popup i {
   line-height: 72px;
 }
@@ -781,7 +889,7 @@ button:focus {
   height: 100%;
   top: 0px;
   left: 0px;
-  background: #61d2b4;
+  background: #333;
   opacity: 0.9;
   filter: alpha(opacity=90);
 }
@@ -807,9 +915,10 @@ button:focus {
 }
 
 .controls .active {
-  color: #61d2b4 !important;
-  border-color: #61d2b4;
-  background: transparent;
+  color: #000 !important;
+  border-color: #333;
+  background: #333;
+  color: #fff !important;
 }
 
 .controls .btn {
@@ -836,10 +945,16 @@ button:focus {
   border-radius: 4px;
   background: #fff;
   position: relative;
+  overflow: hidden;
 }
 
 .shot-item img {
   width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.shot-item:hover img {
+  transform: scale(1.05);
 }
 
 .shot-item .overlay {
@@ -848,9 +963,10 @@ button:focus {
   height: 100%;
   text-align: center;
   opacity: 0;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.8);
   top: 0;
   left: 0;
+  transition: opacity 0.3s ease;
 }
 
 .shot-item:hover .overlay {
@@ -861,7 +977,7 @@ button:focus {
   height: 48px;
   width: 48px;
   line-height: 48px;
-  color: #61d2b4;
+  color: #fff;
   left: 50%;
   margin-left: -24px;
   margin-top: -24px;
@@ -876,13 +992,13 @@ button:focus {
   -webkit-transition: all 0.5s ease-in-out;
   -moz-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  border: 1px solid #61d2b4;
+  border: 1px solid #fff;
   border-radius: 50%;
 }
 
 .overlay .item-icon:hover {
-  background: #61d2b4;
-  color: #fff;
+  background: #fff;
+  color: #000;
 }
 
 .shot-item:hover .item-icon {
@@ -907,7 +1023,8 @@ button:focus {
 }
 
 .pricing-table:hover {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 .pricing-table .pricing-details h2 {
@@ -924,7 +1041,7 @@ button:focus {
   display: inline-block;
   font-size: 48px;
   font-weight: 400;
-  color: #61d2b4;
+  color: #333;
   margin-bottom: 20px;
 }
 
@@ -948,6 +1065,22 @@ button:focus {
 .counters {
   background: url(../img/counter.jpg) fixed;
   position: relative;
+}
+
+.counters::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.counters .container {
+  position: relative;
+  z-index: 1;
 }
 
 .counters .facts-item {
@@ -987,6 +1120,22 @@ button:focus {
   position: relative;
 }
 
+#testimonial::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+#testimonial .container {
+  position: relative;
+  z-index: 1;
+}
+
 .testimonial-item {
   text-align: center;
 }
@@ -1001,11 +1150,12 @@ button:focus {
 .testimonial-item .testimonial-text h3 {
   font-size: 15px;
   font-weight: 700;
+  color: #fff;
 }
 
 .testimonial-item .testimonial-text span {
   font-size: 14px;
-  color: #999;
+  color: #ccc;
 }
 
 .testimonial-item .testimonial-text p {
@@ -1014,10 +1164,11 @@ button:focus {
   padding: 36px 10px 30px 10px;
   margin: 0;
   line-height: 30px;
+  color: #fff;
 }
 
 .owl-theme .owl-controls .owl-page span {
-  background: #61d2b4;
+  background: #fff;
 }
 
 .owl-theme .owl-controls {
@@ -1035,10 +1186,15 @@ button:focus {
   position: relative;
   -webkit-transition: 0.5s;
   transition: 0.5s;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 0px;
-  background: #61d2b4;
+  background: #333;
   overflow: hidden;
+}
+
+.single-team:hover {
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
 }
 
 .single-team img {
@@ -1068,7 +1224,7 @@ button:focus {
 }
 
 .single-team .team-details p {
-  color: #333;
+  color: #666;
 }
 
 .single-team .social-list li {
@@ -1082,13 +1238,18 @@ button:focus {
   text-align: center;
   width: 34px;
   margin: 2px;
-  color: #61d2b4;
+  color: #333;
   font-size: 14px;
   background: #fff;
   border-radius: 50px;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   transition: 0.5s;
+}
+
+.single-team .social-list li a:hover {
+  background: #333;
+  color: #fff;
 }
 
 .single-team .social-list .facebook a:hover {
@@ -1117,6 +1278,7 @@ button:focus {
 #blog .blog-item-wrapper {
   background: #fff;
   border-radius: 0px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   -webkit-transition:
     transform 0.2s linear,
     -webkit-box-shadow 0.2s linear;
@@ -1128,6 +1290,11 @@ button:focus {
     box-shadow 0.2s linear;
 }
 
+#blog .blog-item-wrapper:hover {
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+}
+
 #blog .blog-item-wrapper:hover .blog-item-img:before {
   opacity: 1;
   height: 100%;
@@ -1136,10 +1303,16 @@ button:focus {
 
 #blog .blog-item-img {
   position: relative;
+  overflow: hidden;
 }
 
 #blog .blog-item-img img {
   width: 100%;
+  transition: transform 0.3s ease;
+}
+
+#blog .blog-item-wrapper:hover .blog-item-img img {
+  transform: scale(1.05);
 }
 
 #blog .blog-item-text {
@@ -1158,12 +1331,13 @@ button:focus {
 }
 
 #blog .blog-item-text h3 a:hover {
-  color: #61d2b4;
+  color: #000;
 }
 
 #blog .blog-item-text p {
   line-height: 25px;
   margin-bottom: 20px;
+  color: #666;
 }
 
 .meta-tags {
@@ -1184,7 +1358,7 @@ button:focus {
 }
 
 .meta-tags span a:hover {
-  color: #61d2b4;
+  color: #333;
 }
 
 /* ==========================================================================
@@ -1196,7 +1370,7 @@ button:focus {
 }
 
 .contact-us p span {
-  color: #61d2b4;
+  color: #333;
   padding-left: 10px;
 }
 
@@ -1223,7 +1397,7 @@ button:focus {
 .form-control:focus {
   box-shadow: none;
   color: #fff;
-  border-color: #61d2b4;
+  border-color: #666;
   background: transparent;
   outline: none;
 }
@@ -1267,7 +1441,7 @@ footer {
 }
 
 .footer-links li a:hover {
-  color: #61d2b4;
+  color: #ccc;
 }
 
 .copyright {
@@ -1284,5 +1458,5 @@ footer {
 }
 
 .copyright p a:hover {
-  color: #61d2b4;
+  color: #ccc;
 }

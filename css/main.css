@@ -1,36 +1,3 @@
-/*
-* Mate - Bootstrap 4 Template
-* Build Date: December 2017
-* Last updated: December 2017
-* Version: 1.0
-* Author: UIdeck
-* Copyright (C) 2018 UIdeck
-*/
-/* ------------------------------------- */
-/* TABLE OF CONTENTS
-/* -------------------------------------
-  1. IMPORT GOOGLE FONTS
-  2. GENERAL
-    -2.1 SECTION TITLE
-    -2.2 BUTTONS
-    -2.3 SOCIAL ICON
-    -2.4 PRE LOADER
-    -2.5 SCROLL TO UP
-  3. HERO AREA 
-  4. NAVBAR
-  5. SERVICES SECTION
-  6. FEATURES SECTION
-  7. VIDEO PROMO SECTION
-  8. PORTFOLIO SECTION
-  9. PRICING TABLE 
-  10. COUNTER SECTION
-  11. TESTIMONIAL AREA
-  12. TEAM SECTION
-  13. BLOG SECTION
-  14. CONTACT SECTION
-  15. FOOTER SECTION
-    -15.1 COMING SOON PAGE
-  ------------------------------------- */
 /* ==========================================================================
    1. IMPORT GOOGLE FONTS
    ========================================================================== */
@@ -170,9 +137,9 @@ a:not([href]):not([tabindex]):hover {
 
 .btn-common {
   border: 1px solid #333;
-  background: #333;
+  background: #ffffff;
   position: relative;
-  color: #fff;
+  color: #000000;
   z-index: 1;
   border-radius: 30px;
 }
@@ -268,60 +235,12 @@ button:focus {
   background: #4867aa;
 }
 
-.twitter a {
-  color: #1da1f2;
+.instagram a {
+  color: #ca41ac;
 }
 
-.twitter a:hover {
-  background: #1da1f2;
-}
-
-.google-plus a {
-  color: #dd4d42;
-}
-
-.google-plus a:hover {
-  background: #dd4d42;
-}
-
-.youtube a {
-  color: #df2926;
-}
-
-.youtube a:hover {
-  background: #df2926;
-}
-
-.linkedin a {
-  color: #007bb6;
-}
-
-.linkedin a:hover {
-  background: #007bb6;
-}
-
-.pinterest a {
-  color: #bd081c;
-}
-
-.pinterest a:hover {
-  background: #bd081c;
-}
-
-.dribbble a {
-  color: #ea4c89;
-}
-
-.dribbble a:hover {
-  background: #ea4c89;
-}
-
-.behance a {
-  color: #0b7cff;
-}
-
-.behance a:hover {
-  background: #0b7cff;
+.instagram a:hover {
+  background: #ca41ac;
 }
 
 /* ==========================================================================
@@ -524,7 +443,7 @@ button:focus {
 
 /* Translucent navbar - neutral colors */
 .indigo {
-  background: rgba(0, 0, 0, 0.7);
+  background: #000;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: all 0.3s ease;
@@ -677,6 +596,22 @@ button:focus {
   }
   .slicknav_arrow {
     color: #fff;
+  }
+  /* White background when scrolled on mobile */
+  .top-nav-collapse {
+    background: #fff !important;
+  }
+
+  .top-nav-collapse .slicknav_menu {
+    background: #fff !important;
+  }
+
+  .top-nav-collapse .slicknav_btn {
+    border-color: #000000;
+  }
+
+  .top-nav-collapse .slicknav_menu .slicknav_icon-bar {
+    background: #000000;
   }
 }
 
@@ -1370,7 +1305,7 @@ button:focus {
 }
 
 .contact-us p span {
-  color: #333;
+  color: #ffffff;
   padding-left: 10px;
 }
 
